@@ -1,0 +1,8 @@
+# just useful commands for fixing system time
+
+# cd /etc
+# rm localtime
+# ln -s /usr/share/zoneinfo/US/Eastern localtime
+# echo "America/New_York" > timezone
+
+# sudo date -s "2017-05-25 00:00"

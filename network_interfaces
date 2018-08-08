@@ -1,0 +1,35 @@
+auto lo
+iface lo inet loopback
+
+auto eth0
+# dhcp will cause a delay, thus more time is needed before ssh can be run. use it only if needed.
+#iface eth0 inet dhcp
+iface eth0 inet static
+        address 192.168.2.1
+        netmask 255.255.255.0
+
+auto wlan0
+# dhcp will cause a delay, thus more time is needed before ssh can be run. use it only if needed.
+iface wlan0 inet static
+        address 192.168.1.1
+        netmask 255.255.255.0
+        wireless-essid UB-ANC
+        wireless-mode ad-hoc
+
+allow-hotplug wlan1
+auto wlan1
+# dhcp will cause a delay, thus more time is needed before ssh can be run. use it only if needed.
+# make sure you plug out the second wifi adapter, if it is not able to connect to router
+iface wlan1 inet static
+	address 192.168.0.201
+	netmask 255.255.255.0
+        gateway 192.168.0.1
+        wpa-ssid "?????"
+        wpa-psk "????"
+
+
+# make sure arp works on all drons.
+# if the arp is incomplete, add it manualy for the target device
+# arp -s IP HW_ADDRESS
+# use arp.sh
+
