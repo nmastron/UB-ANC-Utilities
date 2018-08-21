@@ -22,6 +22,8 @@ This script uses PING to check connectivity and find other agents on the network
 ## arp.sh
 This script is called from /etc/rc.local (before "exit 0" line), to continuously update arp table manually. This is useful in case agents cannot find each other on the network for any reason.
 Note that the IPs and Wifi interfaces MAC addresses are hardcoded in this script.
+sh ~/arp.sh > /dev/null 2>&1 &
+
 
 ## screen.sh
 When HDMI is connected after boot, the display won't show anything. This script has the info to force load HDMI.
