@@ -1,0 +1,34 @@
+# interfaces(5) file used by ifup(8) and ifdown(8)
+
+# Please note that this file is written to be used with dhcpcd
+# For static IP, consult /etc/dhcpcd.conf and 'man dhcpcd.conf'
+
+# Include files from /etc/network/interfaces.d:
+source-directory /etc/network/interfaces.d
+
+auto lo
+iface lo inet loopback
+
+auto eth0
+#dhcp will cause a delay, thus more time is needed before ssh can be run
+#iface eth0 inet dhcp
+iface eth0 inet static
+        address 192.168.2.0
+        netmask 255.255.255.0
+
+auto wlan0
+#dhcp will cause a delay, thus more time is needed before ssh can be run
+iface wlan0 inet static
+        address 192.168.1.0
+        netmask 255.255.255.0
+        wireless-essid UB-ANC
+        wireless-mode ad-hoc
+
+#allow-hotplug wlan1
+#auto wlan1
+#dhcp will cause a delay, thus more time is needed before ssh can be run
+#make sure you plug out the second wifi adapter, if it won't connect to router
+#iface wlan1 inet dhcp
+#        wpa-ssid "?"
+#        wpa-psk "?"
+
