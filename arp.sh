@@ -1,6 +1,6 @@
 #!/bin/bash
 # edit /etc/rc.local and add this line:
-# sh /home/pi/ACBBA/arp.sh > /dev/null 2>&1 &
+# sh /home/pi/arp.sh > /dev/null 2>&1 &
 
 while :
 do 
