@@ -129,6 +129,7 @@ function clean_up {
 
 trap clean_up SIGHUP SIGINT SIGTERM
 
+source setup_emulator.sh
 start_firmwares
 start_emulator
 start_agents
